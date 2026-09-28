@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #101c20;
+  --color-ink: #ede6d4;
+  --color-muted: #a8b8b7;
+  --color-accent: #d3bd87;
+  --color-line: #35484b;
+  --font-sans: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  --font-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+}
+
+@layer base {
+  html { background: var(--color-surface); color: var(--color-ink); }
+  body { margin: 0; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 6px; }
+  ::selection { background: var(--color-accent); color: var(--color-surface); }
+}
+
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 50; padding: 1rem; background: var(--color-ink); color: var(--color-surface); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.splash-art { background: radial-gradient(ellipse at 50% 40%, #294549 0%, #101c20 70%); }
+.orb { position: absolute; width: 75vw; height: 75vw; border-radius: 50%; filter: blur(65px); opacity: 0.18; animation: drift 18s ease-in-out infinite alternate; }
+.orb-one { top: -35%; left: -25%; background: #82a59c; }
+.orb-two { right: -35%; bottom: -60%; background: #bda474; animation-delay: -9s; }
+.orbit { position: absolute; top: 50%; left: 50%; width: min(75vw, 42rem); aspect-ratio: 1; border: 1px solid #d3bd8726; border-radius: 50%; transform: translate(-50%, -50%); }
+.orbit::after { content: ""; position: absolute; inset: 1rem; border: 1px solid #d3bd8710; border-radius: inherit; }
+.is-paused .orb { animation-play-state: paused; }
+@keyframes drift { to { transform: translate(10%, 12%) scale(1.12); } }
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; }
+  .motion-control { display: none; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
