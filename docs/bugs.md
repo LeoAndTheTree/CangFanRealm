@@ -1,0 +1,1 @@
+1. After clicking pause animation on main screen, no way to resume animation
