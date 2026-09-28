@@ -2,7 +2,7 @@
 
 A new-player introduction to an original D&D world, built with Nuxt 4, Vue 3, strict TypeScript, and Tailwind CSS 4.
 
-Current state: scroll-driven splash with the 苍梵界 title, five scattered abstract image placeholders, and a second world-map scene. Native scrolling drives staggered fades and movement with no animation dependency. The introduction is immediately accessible. Pausing motion, reduced motion, or disabling JavaScript presents both scenes in normal document flow. Lore and artwork await the DM. CMS, documents, and video hosting are future work.
+Current state: three-scene scroll splash with the 苍梵界 title, selected DM artwork, a transition introducing three places, and a world-map placeholder. Native scrolling drives staggered fades and movement with no animation dependency. The introduction is immediately accessible. Pausing motion, reduced motion, or disabling JavaScript presents all scenes in normal document flow. Lore, the map, and media provenance details are still being prepared. CMS, documents, and video hosting are future work.
 
 ## Development
 
@@ -30,11 +30,13 @@ Node.js 24 LTS and npm are now installed system-wide using the official Windows 
 
 - `app/pages/index.vue`: landing route and introduction.
 - `app/components/landing/Splash.vue`: splash presentation and pause interaction.
-- `app/app.config.ts`: typed placeholder copy, separate from presentation.
+- `content/landing.ts`: typed landing copy and public asset references.
+- `shared/landing-content.ts`: landing content data contract.
+- `app/app.config.ts`: exposes landing content to the Nuxt app.
 - `app/assets/css/main.css`: Tailwind import, theme tokens, and motion.
 - `nuxt.config.ts`: Nuxt, metadata, and Tailwind Vite integration.
 
-The abstract CSS artwork requires no remote assets. Set `landing.images` and `landing.map` in `app/app.config.ts` to replace assets (`src`, `alt`, and labels). Empty or failed image sources retain the local placeholder. The map deliberately contains no invented geography. Replace placeholder copy with DM-approved content before publishing. No CMS or media dependency is installed yet.
+The landing images are optimized public copies under `public/media`; the complete DM archive stays in ignored local folders. Update paths, alt text, and labels in `content/landing.ts`. Empty or failed image sources retain the local placeholder. The map deliberately contains no invented geography. Confirm canon, credit, and public-use permission before publishing. No CMS or media dependency is installed yet. See [content and asset structure](docs/content-and-assets.md).
 
 - [Agent rules](AGENTS.md)
 - [Architecture proposal](docs/architecture.md)

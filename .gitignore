@@ -11,3 +11,7 @@ coverage/
 !.env.example
 .DS_Store
 Thumbs.db
+
+# DM working archives stay local. Publish selected, optimized copies from public/media.
+content/organized thing/
+content/unorganized things/

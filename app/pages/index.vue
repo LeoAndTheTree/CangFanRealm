@@ -8,7 +8,7 @@ const { landing } = useAppConfig()
     <LandingSplash
       :title="landing.title"
       :eyebrow="landing.eyebrow"
-      :notice="landing.prototypeNotice"
+      :notice="landing.notice"
     />
     <section id="introduction" tabindex="-1" class="mx-auto max-w-3xl px-6 py-24 sm:py-32">
       <p class="mb-5 text-xs tracking-[0.25em] text-accent">初识 / 01</p>

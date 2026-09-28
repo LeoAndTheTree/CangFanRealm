@@ -14,7 +14,7 @@ Status: project rules and a runnable Nuxt/Vue/TypeScript/Tailwind scaffold are i
 
 ## Phase 1 — Dynamic splash and introduction
 
-Implemented: a two-scene scroll splash with five image placeholders, title, and a world-map placeholder. Assets and copy are configured in app.config.ts. A passive scroll listener schedules opacity/transform updates with requestAnimationFrame; static scenes remain available without JavaScript, with reduced motion, or via the pause control. Approved lore and final artwork are still outstanding.
+Implemented: a three-scene scroll splash with the title, five selected DM images, a three-place transition, and a world-map placeholder. Typed copy and media references live in `content/landing.ts`; selected public assets are optimized under `public/media`. A passive scroll listener schedules opacity/transform updates with requestAnimationFrame; static scenes remain available without JavaScript, with reduced motion, or via the pause control. Approved lore, a world map, and final media credit/permission metadata are still outstanding.
 
 - Responsive landing page titled 苍梵界.
 - Animated visual treatment that can accept the DM's assets later.

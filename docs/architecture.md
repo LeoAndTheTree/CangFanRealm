@@ -42,6 +42,8 @@ Use framework/content configuration for collection schemas and asset references.
 
 ## Content shape
 
+Implemented for the landing experience: `content/landing.ts` holds typed reader-facing copy and public media references, while `shared/landing-content.ts` defines its contract. Raw DM material remains in ignored local working folders. Selected, optimized public copies live under `public/media` by feature. See [Content and asset structure](content-and-assets.md).
+
 Define and validate these records when building the content phase:
 
 - Article: stable ID, unique slug, title, summary, category, tags, body, draft/published status, publication/update dates, player-safe flag, and optional cover/attachments.
